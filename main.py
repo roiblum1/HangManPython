@@ -6,7 +6,6 @@ num_of_tries (int): The number of tries the player has made.
 
 Returns:
 None: This function does not return any value. It only prints the hangman stages.
-working
 """
 def print_hangman(num_of_tries):
     stages = [
