@@ -121,7 +121,7 @@ def choose_word(file_path, index):
                 print("The file is empty. Please enter a valid file path.")
                 file_path = input("Please try enter file path: ")
                 return choose_word(file_path, index)
-            if (index <= 0):
+            if (type(index) != int or index <= 0):
                 print("The word index is invalid. Please enter a valid word index.")
                 word_index = int(input("Please try enter word index: "))
                 return choose_word(file_path, word_index)
@@ -152,6 +152,9 @@ def main():
         if(check_win(secret_word, old_letters_guessed)):
             print("\nYou win!")
             break
+    if (num_of_tries == 7):
+        print("\nYou lose!")
+        print("The secret word is: ", secret_word)
     print("\n The secret word is: ", secret_word)
     
 if __name__ == "__main__":
